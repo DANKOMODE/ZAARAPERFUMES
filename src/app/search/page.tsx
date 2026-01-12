@@ -26,7 +26,7 @@ export default function SearchPage() {
         const searchTerms = query.toLowerCase().split(' ');
         return products.filter(product => {
             const nameMatch = product.name.toLowerCase();
-            const idMatch = product.originalId.toString();
+            const idMatch = (product as any).originalId?.toString() || "";
 
             // Check if all search terms match the name or if ID matches exactly
             return searchTerms.every(term => nameMatch.includes(term)) || idMatch === query;
@@ -49,7 +49,7 @@ export default function SearchPage() {
 
         // Filter by collection category
         if (selectedCategories.length > 0) {
-            result = result.filter(p => selectedCategories.includes(p.collectionTag));
+            result = result.filter(p => p.collectionTag && selectedCategories.includes(p.collectionTag));
         }
 
         // Filter by size

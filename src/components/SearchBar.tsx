@@ -31,7 +31,7 @@ export function SearchBar() {
             const searchTerms = query.toLowerCase().split(' ');
             const filtered = products.filter(product => {
                 const nameMatch = product.name.toLowerCase();
-                const idMatch = product.originalId.toString();
+                const idMatch = (product as any).originalId?.toString() || "";
 
                 // Check if all search terms match the name (allowing out of order "Aigner Black")
                 return searchTerms.every(term => nameMatch.includes(term)) || idMatch === query;
