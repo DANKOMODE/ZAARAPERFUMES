@@ -1,0 +1,50 @@
+import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
+import './globals.css';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
+import { cn } from '@/lib/utils';
+import { CartProvider } from '@/context/CartContext';
+import { CartDrawer } from '@/components/CartDrawer';
+
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-inter',
+    display: 'swap',
+});
+
+const playfair = Playfair_Display({
+    subsets: ['latin'],
+    variable: '--font-playfair',
+    display: 'swap',
+});
+
+export const metadata: Metadata = {
+    title: 'Zaara Perfumes | Essence of Elegance',
+    description: 'Discover the signature luxury scents of Zaara Perfumes.',
+};
+
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return (
+        <html lang="en" className="scroll-smooth">
+            <body className={cn(
+                "min-h-screen font-sans",
+                inter.variable,
+                playfair.variable
+            )}>
+                <CartProvider>
+                    <Navbar />
+                    <CartDrawer />
+                    <main className="flex-grow">
+                        {children}
+                    </main>
+                    <Footer />
+                </CartProvider>
+            </body>
+        </html>
+    );
+}
