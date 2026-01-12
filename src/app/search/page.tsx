@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { products, Product } from '@/types/products';
 import { ProductCard } from '@/components/ProductCard';
@@ -9,7 +9,7 @@ import { ChevronDown, Grid3x3, List } from 'lucide-react';
 
 type SortOption = 'name-asc' | 'price-low' | 'price-high';
 
-export default function SearchPage() {
+function SearchContent() {
     const searchParams = useSearchParams();
     const query = searchParams.get('q') || '';
 
@@ -270,5 +270,17 @@ export default function SearchPage() {
                 )}
             </div>
         </div>
+    );
+}
+
+export default function SearchPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-brand-primary font-serif animate-pulse">Searching catalogue...</div>
+            </div>
+        }>
+            <SearchContent />
+        </Suspense>
     );
 }
