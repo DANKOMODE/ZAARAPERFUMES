@@ -10,6 +10,7 @@ export interface Variant {
 
 export interface Product {
     id: string;
+    originalId: string;
     name: string;
     description: string;
     imageUrl: string;
