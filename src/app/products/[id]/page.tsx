@@ -127,15 +127,41 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4 text-sm font-medium text-brand-primary/60">
-                                <span className="flex items-center gap-1">
-                                    <Star className="w-4 h-4 text-brand-accent fill-brand-accent" />
-                                    4.9 (128 Reviews)
-                                </span>
+                            <div className="pt-4 flex items-end gap-3 sm:gap-6">
+                                {/* Quantity Selector */}
+                                <div className="flex-shrink-0">
+                                    <h3 className="text-xs font-bold uppercase tracking-widest text-brand-primary/60 mb-3">Quantity</h3>
+                                    <div className="flex items-center border border-brand-primary/20 rounded-sm h-[52px]">
+                                        <button
+                                            onClick={() => setQuantity(q => Math.max(1, q - 1))}
+                                            className="h-full px-3 hover:bg-brand-primary/5 transition-colors"
+                                            aria-label="Decrease quantity"
+                                        >
+                                            <Minus className="w-4 h-4 text-brand-primary/80" />
+                                        </button>
+                                        <span className="w-10 sm:w-12 text-center text-brand-primary font-medium">{quantity}</span>
+                                        <button
+                                            onClick={() => setQuantity(q => q + 1)}
+                                            className="h-full px-3 hover:bg-brand-primary/5 transition-colors"
+                                            aria-label="Increase quantity"
+                                        >
+                                            <Plus className="w-4 h-4 text-brand-primary/80" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={() => selectedVariant && addToCart(product, selectedVariant.size, selectedVariant.price, selectedVariant.category, quantity)}
+                                    disabled={!selectedVariant}
+                                    className="flex-1 bg-brand-primary text-white h-[52px] px-4 sm:px-8 text-[10px] sm:text-sm uppercase tracking-widest hover:bg-brand-dark transition-colors duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 sm:gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
+                                    <span className="whitespace-nowrap">Add to Cart</span>
+                                </button>
                             </div>
                         </div>
 
-                        {/* Notes Section - Placeholder since PDF didn't have notes */}
+                        {/* Olfactory Notes Section */}
                         <div className="space-y-4">
                             <h3 className="text-lg font-serif text-brand-primary border-b border-brand-primary/10 pb-2 inline-block">
                                 Olfactory Notes
@@ -164,40 +190,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="pt-8 flex items-end gap-3 sm:gap-6">
-                            {/* Quantity Selector */}
-                            <div className="flex-shrink-0">
-                                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-primary/60 mb-3">Quantity</h3>
-                                <div className="flex items-center border border-brand-primary/20 rounded-sm h-[52px]">
-                                    <button
-                                        onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                                        className="h-full px-3 hover:bg-brand-primary/5 transition-colors"
-                                        aria-label="Decrease quantity"
-                                    >
-                                        <Minus className="w-4 h-4 text-brand-primary/80" />
-                                    </button>
-                                    <span className="w-10 sm:w-12 text-center text-brand-primary font-medium">{quantity}</span>
-                                    <button
-                                        onClick={() => setQuantity(q => q + 1)}
-                                        className="h-full px-3 hover:bg-brand-primary/5 transition-colors"
-                                        aria-label="Increase quantity"
-                                    >
-                                        <Plus className="w-4 h-4 text-brand-primary/80" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <button
-                                onClick={() => selectedVariant && addToCart(product, selectedVariant.size, selectedVariant.price, selectedVariant.category, quantity)}
-                                disabled={!selectedVariant}
-                                className="flex-1 bg-brand-primary text-white h-[52px] px-4 sm:px-8 text-[10px] sm:text-sm uppercase tracking-widest hover:bg-brand-dark transition-colors duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 sm:gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
-                                <span className="whitespace-nowrap">Add to Cart</span>
-                            </button>
-                        </div>
-
                     </div>
                 </div>
             </div>
