@@ -15,20 +15,37 @@ export function MasterpieceGallery() {
         'Oud & Arabian',
         'Floral & Musk',
         'Sweet Gourmand',
+        'Fresh & Fruity',
         'Princess & Fairytale'
     ];
 
-    const getCategoryForPoster = (id: string) => {
-        if (['oud-noir', 'fareed', 'blue-musk', 'casanova'].includes(id)) return 'Oud & Arabian';
-        if (['rose', 'casabella', 'musk-baby', 'pink-musk', 'rozario'].includes(id)) return 'Floral & Musk';
-        if (['vanilla-voyage', 'vanilla-aura'].includes(id)) return 'Sweet Gourmand';
-        if (['pink-barbie', 'barbie-doll'].includes(id)) return 'Princess & Fairytale';
-        return 'All';
+    const getCategoryForPoster = (poster: CoverSlide) => {
+        const title = poster.title.toUpperCase();
+        const top = poster.notes.top.toUpperCase();
+        const heart = poster.notes.heart.toUpperCase();
+        const base = poster.notes.base.toUpperCase();
+        const notesStr = `${top} ${heart} ${base}`;
+
+        if (['PINK BARBIE', 'BARBIE DOLL'].includes(title)) return 'Princess & Fairytale';
+
+        if (title.includes('OUD') || title.includes('FAREED') || title.includes('CASANOVA') || title.includes('TARAF') || title.includes('MARJ') || notesStr.includes('OUD') || notesStr.includes('SAFFRON')) {
+            return 'Oud & Arabian';
+        }
+
+        if (title.includes('VANILLA') || title.includes('CHOCO') || title.includes('CANDY') || title.includes('NESTLE') || notesStr.includes('CARAMEL') || notesStr.includes('HONEY') || notesStr.includes('CHOCOLATE')) {
+            return 'Sweet Gourmand';
+        }
+
+        if (title.includes('MUSK') || title.includes('ROSÉ') || title.includes('ROSE') || title.includes('CASABELLA') || title.includes('ROZARIO') || title.includes('LATTE') || notesStr.includes('ROSE') || notesStr.includes('LILY')) {
+            return 'Floral & Musk';
+        }
+
+        return 'Fresh & Fruity';
     };
 
     const filteredPosters = selectedCategory === 'All'
         ? COVER_SLIDES
-        : COVER_SLIDES.filter(slide => getCategoryForPoster(slide.id) === selectedCategory);
+        : COVER_SLIDES.filter(slide => getCategoryForPoster(slide) === selectedCategory);
 
     return (
         <section id="masterpiece-gallery" className="py-16 md:py-24 bg-gradient-to-b from-neutral-950 via-brand-primary to-neutral-950 text-white relative overflow-hidden">
@@ -51,7 +68,7 @@ export function MasterpieceGallery() {
                     </h2>
 
                     <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed">
-                        Explore our 13 luxury perfume poster artworks, showcasing the exquisite notes, elegance, and storytelling behind each signature blend.
+                        Explore our 32 luxury Eau de Parfum poster artworks, showcasing the exquisite notes, elegance, and storytelling behind each signature blend.
                     </p>
 
                     {/* Category Filter Tabs */}
@@ -101,7 +118,7 @@ export function MasterpieceGallery() {
                                     <span className="block text-[10px] font-bold tracking-widest text-amber-300 uppercase mb-1">
                                         {poster.badge}
                                     </span>
-                                    <h3 className="text-lg font-serif font-bold text-white mb-1">
+                                    <h3 className="text-lg font-serif font-bold text-white mb-1 truncate">
                                         {poster.title}
                                     </h3>
                                     <p className="text-xs text-gray-300 line-clamp-1 italic">
