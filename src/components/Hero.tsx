@@ -26,7 +26,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "Dark Elegance in Every Drop • Rich, Mysterious, Unforgettable",
         notes: { top: "Oud, Saffron & Spices", heart: "Rose, Incense & Amber", base: "Oud Wood, Musk & Vanilla" },
         image: "/images/posters/oud-noir.jpg",
-        link: "/products/17",
+        link: "/products/poster-1",
         bgGradient: "from-neutral-950 via-amber-950/80 to-stone-950",
         accentColor: "text-amber-400 border-amber-400/40 bg-amber-400/10",
         glowColor: "rgba(217, 119, 6, 0.35)"
@@ -38,7 +38,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Signature of Distinction • Timeless Arabian Elegance",
         notes: { top: "Bergamot & Warm Spices", heart: "Damask Rose & Woods", base: "Royal Oud & Dark Amber" },
         image: "/images/posters/fareed.jpg",
-        link: "/products/23",
+        link: "/products/poster-2",
         bgGradient: "from-neutral-950 via-emerald-950/80 to-neutral-950",
         accentColor: "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
         glowColor: "rgba(16, 185, 129, 0.35)"
@@ -50,7 +50,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Journey into Sweet Elegance • Sweet, Warm, Unforgettable",
         notes: { top: "Caramel & Rich Butter", heart: "Honey, Tonka & Jasmine", base: "Vanilla, Amber & Musk" },
         image: "/images/posters/vanilla-voyage.jpg",
-        link: "/products/19",
+        link: "/products/poster-3",
         bgGradient: "from-amber-950 via-stone-900 to-neutral-950",
         accentColor: "text-orange-300 border-orange-400/40 bg-orange-400/10",
         glowColor: "rgba(251, 146, 60, 0.35)"
@@ -62,7 +62,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Fragrance that Blooms With You • Soft, Radiant, Unforgettable",
         notes: { top: "Blackberry & Bergamot", heart: "Lotus Flower & Rose", base: "Vanilla & Amber Sandalwood" },
         image: "/images/posters/rose.jpg",
-        link: "/products/20",
+        link: "/products/poster-4",
         bgGradient: "from-rose-950 via-pink-950/70 to-neutral-950",
         accentColor: "text-rose-300 border-rose-400/40 bg-rose-400/10",
         glowColor: "rgba(244, 63, 94, 0.35)"
@@ -74,7 +74,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Story of Elegance • Two Worlds, One Extraordinary Scent",
         notes: { top: "White Florals & Citrus", heart: "Turkish Rose & Jasmine", base: "Sensual Musk & Amber" },
         image: "/images/posters/casabella.jpg",
-        link: "/products/21",
+        link: "/products/poster-5",
         bgGradient: "from-amber-950 via-neutral-900 to-stone-950",
         accentColor: "text-amber-300 border-amber-400/40 bg-amber-400/10",
         glowColor: "rgba(245, 158, 11, 0.35)"
@@ -86,7 +86,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Scent Beyond Time • Fresh, Elegant, Masculine & Unforgettable",
         notes: { top: "Marine Breeze & Citrus", heart: "Lavender & White Floral", base: "Pure Musk & Cedar" },
         image: "/images/posters/blue-musk.jpg",
-        link: "/products/14",
+        link: "/products/poster-6",
         bgGradient: "from-slate-950 via-blue-950/90 to-slate-900",
         accentColor: "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
         glowColor: "rgba(6, 182, 212, 0.35)"
@@ -98,7 +98,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "Scents Beyond Boundaries • A Fragrance that Leaves a Lasting Aura",
         notes: { top: "Bergamot & Lemon", heart: "Vanilla, Chocolate & Caramel", base: "Vanilla, Amber & Tonka" },
         image: "/images/posters/vanilla-aura.jpg",
-        link: "/products/22",
+        link: "/products/poster-7",
         bgGradient: "from-yellow-950 via-stone-900 to-amber-950",
         accentColor: "text-yellow-300 border-yellow-400/40 bg-yellow-400/10",
         glowColor: "rgba(234, 179, 8, 0.35)"
@@ -110,7 +110,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Fragrance Beyond Moments • A Legendary Fragrance of Passion",
         notes: { top: "Bright Bergamot", heart: "Refined Spices", base: "Deep Sensual Woods" },
         image: "/images/posters/casanova.jpg",
-        link: "/products/16",
+        link: "/products/poster-8",
         bgGradient: "from-neutral-950 via-amber-950/80 to-stone-950",
         accentColor: "text-amber-400 border-amber-400/40 bg-amber-400/10",
         glowColor: "rgba(245, 158, 11, 0.35)"
@@ -122,7 +122,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "Be Bold, Be Beautiful, Be You • More than a Fragrance, A Feeling",
         notes: { top: "Sweet Raspberry & Peony", heart: "Rose & Jasmine Blossom", base: "Sparkling Musk & Amber" },
         image: "/images/posters/pink-barbie.jpg",
-        link: "/products/5",
+        link: "/products/poster-9",
         bgGradient: "from-pink-950 via-rose-950/80 to-neutral-950",
         accentColor: "text-pink-300 border-pink-400/40 bg-pink-400/10",
         glowColor: "rgba(236, 72, 153, 0.35)"
@@ -134,7 +134,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "More than a Fragrance, A Fairytale Feeling • Sweet & Unforgettable",
         notes: { top: "Sweet Orchid & Bergamot", heart: "Purple Violet & Plum", base: "Velvet Musk & Vanilla" },
         image: "/images/posters/barbie-doll.jpg",
-        link: "/products/1",
+        link: "/products/poster-10",
         bgGradient: "from-purple-950 via-pink-950/70 to-neutral-950",
         accentColor: "text-purple-300 border-purple-400/40 bg-purple-400/10",
         glowColor: "rgba(168, 85, 247, 0.35)"
@@ -146,7 +146,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "A Touch of Pure Love • Softness that Stays with You",
         notes: { top: "Soft Powder & Lily", heart: "Clean Cotton & Rose", base: "Pure Musk & Cashmere" },
         image: "/images/posters/musk-baby.jpg",
-        link: "/products/15",
+        link: "/products/poster-11",
         bgGradient: "from-rose-950 via-stone-900 to-neutral-950",
         accentColor: "text-rose-300 border-rose-400/40 bg-rose-400/10",
         glowColor: "rgba(244, 63, 94, 0.35)"
@@ -158,7 +158,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "Pure Musk, Pure You • Soft, Elegant, Unforgettable",
         notes: { top: "Cherry Blossom & Peach", heart: "Pink Rose & Magnolia", base: "White Musk & Amber" },
         image: "/images/posters/pink-musk.jpg",
-        link: "/products/18",
+        link: "/products/poster-12",
         bgGradient: "from-pink-950 via-stone-900 to-neutral-950",
         accentColor: "text-pink-300 border-pink-400/40 bg-pink-400/10",
         glowColor: "rgba(244, 114, 182, 0.35)"
@@ -170,7 +170,7 @@ export const COVER_SLIDES: CoverSlide[] = [
         tagline: "Elegance in Every Drop • Two Souls, One Essence",
         notes: { top: "Pear, Calone & Tangerine", heart: "Watermelon, Strawberry & Rose", base: "Sweet Praline, Musk & Amber" },
         image: "/images/posters/rozario.jpg",
-        link: "/products/10",
+        link: "/products/poster-13",
         bgGradient: "from-rose-950 via-amber-950/70 to-neutral-950",
         accentColor: "text-red-300 border-red-400/40 bg-red-400/10",
         glowColor: "rgba(239, 68, 68, 0.35)"
