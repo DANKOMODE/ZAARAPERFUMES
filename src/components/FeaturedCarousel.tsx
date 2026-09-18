@@ -42,23 +42,23 @@ export function FeaturedCarousel() {
     if (featuredProducts.length === 0) return null;
 
     return (
-        <section className="py-16 md:py-20 bg-gradient-to-b from-white via-brand-light/30 to-white">
+        <section className="py-16 md:py-20 bg-neutral-950 text-white border-t border-amber-400/20">
             <div className="container mx-auto px-4">
 
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-brand-accent/10 text-brand-accent mb-3">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 text-amber-400 mb-3">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Featured Retail Line</span>
+                        <span>Featured Luxury Line</span>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-primary mb-3">
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-3 tracking-tight">
                         Zaara Eau de Parfum Masterpiece Collection
                     </h2>
-                    <p className="text-brand-primary/70 max-w-2xl mx-auto text-sm md:text-base">
+                    <p className="text-neutral-300 max-w-2xl mx-auto text-sm md:text-base font-light">
                         Explore our luxury retail fragrances available in 50ml (75 AED) & 100ml (150 AED)
                     </p>
-                    <div className="h-1 w-20 bg-brand-accent mx-auto mt-5 rounded-full" />
+                    <div className="h-0.5 w-20 bg-amber-400 mx-auto mt-5 rounded-full" />
                 </div>
 
                 {/* Carousel Container */}
@@ -68,10 +68,10 @@ export function FeaturedCarousel() {
                     {canScrollLeft && (
                         <button
                             onClick={() => scroll('left')}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-xl border border-gray-200 hover:bg-white transition-all opacity-90 group-hover:opacity-100 hover:scale-110"
+                            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-neutral-900/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-amber-400/30 hover:bg-neutral-800 transition-all text-amber-400 opacity-90 group-hover:opacity-100 hover:scale-110"
                             aria-label="Scroll left"
                         >
-                            <ChevronLeft className="w-6 h-6 text-brand-primary" />
+                            <ChevronLeft className="w-6 h-6" />
                         </button>
                     )}
 
@@ -95,10 +95,10 @@ export function FeaturedCarousel() {
                     {canScrollRight && (
                         <button
                             onClick={() => scroll('right')}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-xl border border-gray-200 hover:bg-white transition-all opacity-90 group-hover:opacity-100 hover:scale-110"
+                            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-neutral-900/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-amber-400/30 hover:bg-neutral-800 transition-all text-amber-400 opacity-90 group-hover:opacity-100 hover:scale-110"
                             aria-label="Scroll right"
                         >
-                            <ChevronRight className="w-6 h-6 text-brand-primary" />
+                            <ChevronRight className="w-6 h-6" />
                         </button>
                     )}
 
