@@ -4,40 +4,16 @@ import { useState, useMemo } from 'react';
 import { products, Product } from '@/types/products';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductListView } from '@/components/ProductListView';
-import { notFound } from 'next/navigation';
-import { ChevronDown, Grid3x3, List } from 'lucide-react';
+import { ChevronDown, Grid3x3, List, Sparkles } from 'lucide-react';
 
 type SortOption = 'name-asc' | 'price-low' | 'price-high';
 
 export default function CollectionPage({ params }: { params: { type: string } }) {
 
-    const getCollectionInfo = (type: string) => {
-        switch (type) {
-            case 'classics':
-                return {
-                    title: 'Zaara Classics',
-                    description: 'Timeless favorites for everyday elegance. (1300+ Items)',
-                    filter: (p: Product) => p.collectionTag === 'Classic' || p.variants.some(v => v.category === 'Economy' && p.collectionTag !== 'Signature')
-                };
-            case 'signature':
-                return {
-                    title: "Zaara's Signature Collection",
-                    description: 'Our exclusive curated selection (34 Items).',
-                    filter: (p: Product) => p.collectionTag === 'Signature'
-                };
-            case 'top-quality':
-                return {
-                    title: 'Top Quality',
-                    description: 'Identical essences crafted for the true connoisseur.',
-                    filter: (p: Product) => p.collectionTag === 'Top Quality'
-                };
-            default:
-                return null;
-        }
+    const info = {
+        title: 'Zaara Eau de Parfum Masterpiece Collection',
+        description: 'Exclusive retail fragrance collection. Available in 50ml (75 AED) & 100ml (150 AED).'
     };
-
-    const info = getCollectionInfo(params.type);
-    if (!info) return notFound();
 
     // State
     const [sortBy, setSortBy] = useState<SortOption>('name-asc');
@@ -45,22 +21,14 @@ export default function CollectionPage({ params }: { params: { type: string } })
     const [page, setPage] = useState(1);
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
-    // Get unique sizes from all products
-    const availableSizes = useMemo(() => {
-        const allSizes = new Set<string>();
-        products.forEach(p => p.variants.forEach(v => allSizes.add(v.size)));
-        return Array.from(allSizes).sort((a, b) => {
-            // Sort sizes logically (100ml, 250ml, 500ml, 1Kg)
-            const order = ['100ml', '250ml', '500ml', '1Kg'];
-            return order.indexOf(a) - order.indexOf(b);
-        });
-    }, []);
+    // Available sizes
+    const availableSizes = ['50ml', '100ml'];
 
     // Filter and Sort
     const processedProducts = useMemo(() => {
-        let result = products.filter(info.filter);
+        let result = [...products];
 
-        // Filter by size if any selected
+        // Filter by size if selected
         if (selectedSizes.length > 0) {
             result = result.filter(p =>
                 p.variants.some(v => selectedSizes.includes(v.size))
@@ -84,7 +52,7 @@ export default function CollectionPage({ params }: { params: { type: string } })
         });
 
         return result;
-    }, [info.filter, selectedSizes, sortBy]);
+    }, [selectedSizes, sortBy]);
 
     const itemsPerPage = 24;
     const totalPages = Math.ceil(processedProducts.length / itemsPerPage);
@@ -96,28 +64,33 @@ export default function CollectionPage({ params }: { params: { type: string } })
                 ? prev.filter(s => s !== size)
                 : [...prev, size]
         );
-        setPage(1); // Reset to first page
+        setPage(1);
     };
 
     return (
-        <div className="bg-white min-h-screen py-20">
+        <div className="bg-white min-h-screen py-16 md:py-24">
             <div className="container mx-auto px-4">
 
                 <div className="text-center mb-16 space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-brand-accent/10 text-brand-accent">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Retail Collection</span>
+                    </div>
+
                     <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary">
                         {info.title}
                     </h1>
                     <p className="text-brand-primary/60 max-w-2xl mx-auto">
                         {info.description}
                     </p>
-                    <div className="h-1 w-20 bg-brand-accent mx-auto mt-8" />
+                    <div className="h-1 w-20 bg-brand-accent mx-auto mt-6 rounded-full" />
                 </div>
 
                 {/* Filters & Sort Bar */}
-                <div className="flex flex-col md:flex-row gap-4 mb-8 pb-6 border-b border-brand-primary/10">
+                <div className="flex flex-col md:flex-row gap-4 mb-8 pb-6 border-b border-brand-primary/10 items-center justify-between">
 
                     {/* View Toggle */}
-                    <div className="flex items-center gap-2 md:border-r border-brand-primary/10 md:pr-4">
+                    <div className="flex items-center gap-2">
                         <button
                             onClick={() => setViewMode('grid')}
                             className={`p-2 rounded transition-colors ${viewMode === 'grid'
@@ -140,59 +113,56 @@ export default function CollectionPage({ params }: { params: { type: string } })
                         </button>
                     </div>
 
-                    {/* Sort Dropdown */}
-                    <div className="flex items-center gap-3">
-                        <label className="text-sm font-medium text-brand-primary/60 uppercase tracking-wider">
-                            Sort by:
-                        </label>
-                        <div className="relative">
-                            <select
-                                value={sortBy}
-                                onChange={(e) => { setSortBy(e.target.value as SortOption); setPage(1); }}
-                                className="appearance-none bg-white border border-brand-primary/20 rounded-sm px-4 py-2 pr-10 text-sm text-brand-primary focus:outline-none focus:border-brand-primary/50 cursor-pointer"
-                            >
-                                <option value="name-asc">Name (A-Z)</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                            </select>
-                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-primary/40 pointer-events-none" />
+                    {/* Sort & Filter Controls */}
+                    <div className="flex items-center gap-4 flex-wrap justify-center">
+
+                        {/* Sort Dropdown */}
+                        <div className="flex items-center gap-2">
+                            <label className="text-xs font-semibold text-brand-primary/60 uppercase tracking-wider">
+                                Sort:
+                            </label>
+                            <div className="relative">
+                                <select
+                                    value={sortBy}
+                                    onChange={(e) => { setSortBy(e.target.value as SortOption); setPage(1); }}
+                                    className="appearance-none bg-white border border-brand-primary/20 rounded-md px-3 py-1.5 pr-8 text-xs text-brand-primary focus:outline-none cursor-pointer"
+                                >
+                                    <option value="name-asc">Name (A-Z)</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-brand-primary/40 pointer-events-none" />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Size Filters */}
-                    <div className="flex items-center gap-3 flex-wrap">
-                        <label className="text-sm font-medium text-brand-primary/60 uppercase tracking-wider">
-                            Filter by Size:
-                        </label>
-                        {availableSizes.map(size => (
-                            <button
-                                key={size}
-                                onClick={() => toggleSize(size)}
-                                className={`px-3 py-1 text-xs border rounded-full transition-all ${selectedSizes.includes(size)
-                                    ? 'bg-brand-primary text-white border-brand-primary'
-                                    : 'border-brand-primary/20 text-brand-primary/60 hover:border-brand-primary/50'
-                                    }`}
-                            >
-                                {size}
-                            </button>
-                        ))}
-                        {selectedSizes.length > 0 && (
-                            <button
-                                onClick={() => { setSelectedSizes([]); setPage(1); }}
-                                className="text-xs text-brand-accent underline ml-2"
-                            >
-                                Clear
-                            </button>
-                        )}
-                    </div>
-                </div>
+                        {/* Size Filters */}
+                        <div className="flex items-center gap-2">
+                            <label className="text-xs font-semibold text-brand-primary/60 uppercase tracking-wider">
+                                Size:
+                            </label>
+                            {availableSizes.map(size => (
+                                <button
+                                    key={size}
+                                    onClick={() => toggleSize(size)}
+                                    className={`px-3 py-1 text-xs border rounded-full transition-all ${selectedSizes.includes(size)
+                                        ? 'bg-brand-primary text-white border-brand-primary'
+                                        : 'border-brand-primary/20 text-brand-primary/60 hover:border-brand-primary/50'
+                                        }`}
+                                >
+                                    {size}
+                                </button>
+                            ))}
+                            {selectedSizes.length > 0 && (
+                                <button
+                                    onClick={() => { setSelectedSizes([]); setPage(1); }}
+                                    className="text-xs text-brand-accent underline ml-1"
+                                >
+                                    Clear
+                                </button>
+                            )}
+                        </div>
 
-                {/* Results Count */}
-                <div className="flex justify-between items-center mb-8 text-sm text-brand-primary/50">
-                    <span>Showing {processedProducts.length} results</span>
-                    <span className="text-xs">
-                        {viewMode === 'grid' ? 'Grid View' : 'List View'}
-                    </span>
+                    </div>
                 </div>
 
                 {/* Product Display - Grid or List */}
@@ -205,32 +175,9 @@ export default function CollectionPage({ params }: { params: { type: string } })
                 ) : (
                     <ProductListView
                         products={displayedProducts}
-                        showVariantHeaders={params.type === 'classics'}
                     />
                 )}
 
-                {/* Pagination */}
-                {totalPages > 1 && (
-                    <div className="flex justify-center gap-2 mt-16">
-                        <button
-                            onClick={() => setPage(p => Math.max(1, p - 1))}
-                            disabled={page === 1}
-                            className="px-4 py-2 border border-brand-primary/20 disabled:opacity-30 hover:bg-brand-primary hover:text-white transition-colors"
-                        >
-                            Previous
-                        </button>
-                        <span className="px-4 py-2 text-brand-primary/60">
-                            Page {page} of {totalPages}
-                        </span>
-                        <button
-                            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                            disabled={page === totalPages}
-                            className="px-4 py-2 border border-brand-primary/20 disabled:opacity-30 hover:bg-brand-primary hover:text-white transition-colors"
-                        >
-                            Next
-                        </button>
-                    </div>
-                )}
             </div>
         </div>
     );
