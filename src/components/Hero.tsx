@@ -20,160 +20,516 @@ export interface CoverSlide {
 
 export const COVER_SLIDES: CoverSlide[] = [
     {
-        id: "oud-noir",
-        badge: "Oud Noir Collection",
-        title: "OUD NOIR",
-        tagline: "Dark Elegance in Every Drop • Rich, Mysterious, Unforgettable",
-        notes: { top: "Oud, Saffron & Spices", heart: "Rose, Incense & Amber", base: "Oud Wood, Musk & Vanilla" },
-        image: "/images/posters/oud-noir.jpg",
-        link: "/products/poster-1",
-        bgGradient: "from-neutral-950 via-amber-950/80 to-stone-950",
-        accentColor: "text-amber-400 border-amber-400/40 bg-amber-400/10",
-        glowColor: "rgba(217, 119, 6, 0.35)"
+        "id": "poster-1",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "OUD NOIR",
+        "tagline": "Dark Elegance in Every Drop. A rich, mysterious, and unforgettable Arabian Oud Eau de Parfum.",
+        "notes": {
+            "top": "Oud, Saffron & Spices",
+            "heart": "Rose, Incense & Amber",
+            "base": "Oud Wood, Musk & Vanilla"
+        },
+        "image": "/images/posters/oud-noir.jpg",
+        "link": "/products/poster-1",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
     },
     {
-        id: "fareed",
-        badge: "Signature Collection",
-        title: "FAREED",
-        tagline: "A Signature of Distinction • Timeless Arabian Elegance",
-        notes: { top: "Bergamot & Warm Spices", heart: "Damask Rose & Woods", base: "Royal Oud & Dark Amber" },
-        image: "/images/posters/fareed.jpg",
-        link: "/products/poster-2",
-        bgGradient: "from-neutral-950 via-emerald-950/80 to-neutral-950",
-        accentColor: "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
-        glowColor: "rgba(16, 185, 129, 0.35)"
+        "id": "poster-2",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "FAREED",
+        "tagline": "A Signature of Distinction. Timeless Arabian elegance crafted for a bolder, unforgettable presence.",
+        "notes": {
+            "top": "Bergamot & Warm Spices",
+            "heart": "Damask Rose & Woods",
+            "base": "Royal Oud & Dark Amber"
+        },
+        "image": "/images/posters/fareed.jpg",
+        "link": "/products/poster-2",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
     },
     {
-        id: "vanilla-voyage",
-        badge: "Maison Asrar Series",
-        title: "VANILLA VOYAGE",
-        tagline: "A Journey into Sweet Elegance • Sweet, Warm, Unforgettable",
-        notes: { top: "Caramel & Rich Butter", heart: "Honey, Tonka & Jasmine", base: "Vanilla, Amber & Musk" },
-        image: "/images/posters/vanilla-voyage.jpg",
-        link: "/products/poster-3",
-        bgGradient: "from-amber-950 via-stone-900 to-neutral-950",
-        accentColor: "text-orange-300 border-orange-400/40 bg-orange-400/10",
-        glowColor: "rgba(251, 146, 60, 0.35)"
+        "id": "poster-3",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "VANILLA VOYAGE",
+        "tagline": "A Journey into Sweet Elegance. Sweet, warm, and unforgettable gourmand vanilla composition by Maison Asrar.",
+        "notes": {
+            "top": "Caramel & Rich Butter",
+            "heart": "Honey, Tonka & Jasmine",
+            "base": "Vanilla, Amber & Musk"
+        },
+        "image": "/images/posters/vanilla-voyage.jpg",
+        "link": "/products/poster-3",
+        "bgGradient": "from-amber-950 via-stone-900 to-neutral-950",
+        "accentColor": "text-orange-300 border-orange-400/40 bg-orange-400/10",
+        "glowColor": "rgba(251, 146, 60, 0.35)"
     },
     {
-        id: "rose",
-        badge: "Floral Collection",
-        title: "ROSÉ MAISON ASRAR",
-        tagline: "A Fragrance that Blooms With You • Soft, Radiant, Unforgettable",
-        notes: { top: "Blackberry & Bergamot", heart: "Lotus Flower & Rose", base: "Vanilla & Amber Sandalwood" },
-        image: "/images/posters/rose.jpg",
-        link: "/products/poster-4",
-        bgGradient: "from-rose-950 via-pink-950/70 to-neutral-950",
-        accentColor: "text-rose-300 border-rose-400/40 bg-rose-400/10",
-        glowColor: "rgba(244, 63, 94, 0.35)"
+        "id": "poster-4",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "ROSÉ MAISON ASRAR",
+        "tagline": "A Fragrance that Blooms With You. Floral, elegant, feminine, and timeless rose essence.",
+        "notes": {
+            "top": "Blackberry & Bergamot",
+            "heart": "Lotus Flower & Rose",
+            "base": "Vanilla & Amber Sandalwood"
+        },
+        "image": "/images/posters/rose.jpg",
+        "link": "/products/poster-4",
+        "bgGradient": "from-rose-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-rose-300 border-rose-400/40 bg-rose-400/10",
+        "glowColor": "rgba(244, 63, 94, 0.35)"
     },
     {
-        id: "casabella",
-        badge: "Classics Collection",
-        title: "CASABELLA",
-        tagline: "A Story of Elegance • Two Worlds, One Extraordinary Scent",
-        notes: { top: "White Florals & Citrus", heart: "Turkish Rose & Jasmine", base: "Sensual Musk & Amber" },
-        image: "/images/posters/casabella.jpg",
-        link: "/products/poster-5",
-        bgGradient: "from-amber-950 via-neutral-900 to-stone-950",
-        accentColor: "text-amber-300 border-amber-400/40 bg-amber-400/10",
-        glowColor: "rgba(245, 158, 11, 0.35)"
+        "id": "poster-5",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CASABELLA",
+        "tagline": "A Story of Elegance. Two worlds, one extraordinary scent with long-lasting floral sophistication.",
+        "notes": {
+            "top": "White Florals & Citrus",
+            "heart": "Turkish Rose & Jasmine",
+            "base": "Sensual Musk & Amber"
+        },
+        "image": "/images/posters/casabella.jpg",
+        "link": "/products/poster-5",
+        "bgGradient": "from-slate-950 via-blue-950/90 to-slate-900",
+        "accentColor": "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
+        "glowColor": "rgba(6, 182, 212, 0.35)"
     },
     {
-        id: "blue-musk",
-        badge: "Fresh & Marine Series",
-        title: "BLUE MUSK",
-        tagline: "A Scent Beyond Time • Fresh, Elegant, Masculine & Unforgettable",
-        notes: { top: "Marine Breeze & Citrus", heart: "Lavender & White Floral", base: "Pure Musk & Cedar" },
-        image: "/images/posters/blue-musk.jpg",
-        link: "/products/poster-6",
-        bgGradient: "from-slate-950 via-blue-950/90 to-slate-900",
-        accentColor: "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
-        glowColor: "rgba(6, 182, 212, 0.35)"
+        "id": "poster-6",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "BLUE MUSK",
+        "tagline": "A Scent Beyond Time. Fresh, elegant, masculine, and unforgettable marine musk blend.",
+        "notes": {
+            "top": "Marine Breeze & Citrus",
+            "heart": "Lavender & White Floral",
+            "base": "Pure Musk & Cedar"
+        },
+        "image": "/images/posters/blue-musk.jpg",
+        "link": "/products/poster-6",
+        "bgGradient": "from-purple-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-purple-300 border-purple-400/40 bg-purple-400/10",
+        "glowColor": "rgba(168, 85, 247, 0.35)"
     },
     {
-        id: "vanilla-aura",
-        badge: "Gourmand Series",
-        title: "VANILLA AURA",
-        tagline: "Scents Beyond Boundaries • A Fragrance that Leaves a Lasting Aura",
-        notes: { top: "Bergamot & Lemon", heart: "Vanilla, Chocolate & Caramel", base: "Vanilla, Amber & Tonka" },
-        image: "/images/posters/vanilla-aura.jpg",
-        link: "/products/poster-7",
-        bgGradient: "from-yellow-950 via-stone-900 to-amber-950",
-        accentColor: "text-yellow-300 border-yellow-400/40 bg-yellow-400/10",
-        glowColor: "rgba(234, 179, 8, 0.35)"
+        "id": "poster-7",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "VANILLA AURA",
+        "tagline": "Scents Beyond Boundaries. A warm, creamy, and unforgettable fragrance that leaves a lasting aura.",
+        "notes": {
+            "top": "Bergamot & Lemon",
+            "heart": "Vanilla, Chocolate & Caramel",
+            "base": "Vanilla, Amber & Tonka"
+        },
+        "image": "/images/posters/vanilla-aura.jpg",
+        "link": "/products/poster-7",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
     },
     {
-        id: "casanova",
-        badge: "Tiziana Terenzi Inspired",
-        title: "CASANOVA",
-        tagline: "A Fragrance Beyond Moments • A Legendary Fragrance of Passion",
-        notes: { top: "Bright Bergamot", heart: "Refined Spices", base: "Deep Sensual Woods" },
-        image: "/images/posters/casanova.jpg",
-        link: "/products/poster-8",
-        bgGradient: "from-neutral-950 via-amber-950/80 to-stone-950",
-        accentColor: "text-amber-400 border-amber-400/40 bg-amber-400/10",
-        glowColor: "rgba(245, 158, 11, 0.35)"
+        "id": "poster-8",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CASANOVA",
+        "tagline": "Extrait de Parfum. A legendary fragrance beyond moments, overflowing with passion and elegance.",
+        "notes": {
+            "top": "Bright Bergamot",
+            "heart": "Refined Spices",
+            "base": "Deep Sensual Woods"
+        },
+        "image": "/images/posters/casanova.jpg",
+        "link": "/products/poster-8",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
     },
     {
-        id: "pink-barbie",
-        badge: "Princess Edition",
-        title: "PINK BARBIE",
-        tagline: "Be Bold, Be Beautiful, Be You • More than a Fragrance, A Feeling",
-        notes: { top: "Sweet Raspberry & Peony", heart: "Rose & Jasmine Blossom", base: "Sparkling Musk & Amber" },
-        image: "/images/posters/pink-barbie.jpg",
-        link: "/products/poster-9",
-        bgGradient: "from-pink-950 via-rose-950/80 to-neutral-950",
-        accentColor: "text-pink-300 border-pink-400/40 bg-pink-400/10",
-        glowColor: "rgba(236, 72, 153, 0.35)"
+        "id": "poster-9",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "PINK BARBIE",
+        "tagline": "Be Bold, Be Beautiful, Be You. A fragrance for modern princesses, offering more than a fragrance: a feeling.",
+        "notes": {
+            "top": "Sweet Raspberry & Peony",
+            "heart": "Rose & Jasmine Blossom",
+            "base": "Sparkling Musk & Amber"
+        },
+        "image": "/images/posters/pink-barbie.jpg",
+        "link": "/products/poster-9",
+        "bgGradient": "from-amber-950 via-stone-900 to-neutral-950",
+        "accentColor": "text-orange-300 border-orange-400/40 bg-orange-400/10",
+        "glowColor": "rgba(251, 146, 60, 0.35)"
     },
     {
-        id: "barbie-doll",
-        badge: "Fairytale Collection",
-        title: "BARBIE DOLL",
-        tagline: "More than a Fragrance, A Fairytale Feeling • Sweet & Unforgettable",
-        notes: { top: "Sweet Orchid & Bergamot", heart: "Purple Violet & Plum", base: "Velvet Musk & Vanilla" },
-        image: "/images/posters/barbie-doll.jpg",
-        link: "/products/poster-10",
-        bgGradient: "from-purple-950 via-pink-950/70 to-neutral-950",
-        accentColor: "text-purple-300 border-purple-400/40 bg-purple-400/10",
-        glowColor: "rgba(168, 85, 247, 0.35)"
+        "id": "poster-10",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "BARBIE DOLL",
+        "tagline": "More than a Fragrance, A Fairytale Feeling. Sweet, elegant, feminine, and unforgettable floral bouquet.",
+        "notes": {
+            "top": "Sweet Orchid & Bergamot",
+            "heart": "Purple Violet & Plum",
+            "base": "Velvet Musk & Vanilla"
+        },
+        "image": "/images/posters/barbie-doll.jpg",
+        "link": "/products/poster-10",
+        "bgGradient": "from-rose-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-rose-300 border-rose-400/40 bg-rose-400/10",
+        "glowColor": "rgba(244, 63, 94, 0.35)"
     },
     {
-        id: "musk-baby",
-        badge: "Pure Musk Collection",
-        title: "MUSK BABY",
-        tagline: "A Touch of Pure Love • Softness that Stays with You",
-        notes: { top: "Soft Powder & Lily", heart: "Clean Cotton & Rose", base: "Pure Musk & Cashmere" },
-        image: "/images/posters/musk-baby.jpg",
-        link: "/products/poster-11",
-        bgGradient: "from-rose-950 via-stone-900 to-neutral-950",
-        accentColor: "text-rose-300 border-rose-400/40 bg-rose-400/10",
-        glowColor: "rgba(244, 63, 94, 0.35)"
+        "id": "poster-11",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "MUSK BABY",
+        "tagline": "A Touch of Pure Love. Softness that stays with you, pure musk and delicate luxury.",
+        "notes": {
+            "top": "Soft Powder & Lily",
+            "heart": "Clean Cotton & Rose",
+            "base": "Pure Musk & Cashmere"
+        },
+        "image": "/images/posters/musk-baby.jpg",
+        "link": "/products/poster-11",
+        "bgGradient": "from-slate-950 via-blue-950/90 to-slate-900",
+        "accentColor": "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
+        "glowColor": "rgba(6, 182, 212, 0.35)"
     },
     {
-        id: "pink-musk",
-        badge: "Luxury Musk Series",
-        title: "PINK MUSK",
-        tagline: "Pure Musk, Pure You • Soft, Elegant, Unforgettable",
-        notes: { top: "Cherry Blossom & Peach", heart: "Pink Rose & Magnolia", base: "White Musk & Amber" },
-        image: "/images/posters/pink-musk.jpg",
-        link: "/products/poster-12",
-        bgGradient: "from-pink-950 via-stone-900 to-neutral-950",
-        accentColor: "text-pink-300 border-pink-400/40 bg-pink-400/10",
-        glowColor: "rgba(244, 114, 182, 0.35)"
+        "id": "poster-12",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "PINK MUSK",
+        "tagline": "Pure Musk, Pure You. Soft, elegant, and unforgettable luxury in every spray.",
+        "notes": {
+            "top": "Cherry Blossom & Peach",
+            "heart": "Pink Rose & Magnolia",
+            "base": "White Musk & Amber"
+        },
+        "image": "/images/posters/pink-musk.jpg",
+        "link": "/products/poster-12",
+        "bgGradient": "from-purple-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-purple-300 border-purple-400/40 bg-purple-400/10",
+        "glowColor": "rgba(168, 85, 247, 0.35)"
     },
     {
-        id: "rozario",
-        badge: "Elegance Collection",
-        title: "ROZARIO",
-        tagline: "Elegance in Every Drop • Two Souls, One Essence",
-        notes: { top: "Pear, Calone & Tangerine", heart: "Watermelon, Strawberry & Rose", base: "Sweet Praline, Musk & Amber" },
-        image: "/images/posters/rozario.jpg",
-        link: "/products/poster-13",
-        bgGradient: "from-rose-950 via-amber-950/70 to-neutral-950",
-        accentColor: "text-red-300 border-red-400/40 bg-red-400/10",
-        glowColor: "rgba(239, 68, 68, 0.35)"
+        "id": "poster-13",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "ROZARIO",
+        "tagline": "Elegance in Every Drop. A scent that stays with you, blending fruity aquatic top notes with sweet praline and amber.",
+        "notes": {
+            "top": "Pear, Calone & Tangerine",
+            "heart": "Watermelon, Strawberry & Rose",
+            "base": "Sweet Praline, Musk & Amber"
+        },
+        "image": "/images/posters/rozario.jpg",
+        "link": "/products/poster-13",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
+    },
+    {
+        "id": "poster-14",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "ZAARA LYCHEE",
+        "tagline": "A Fruity Escape • Fresh, Sweet, Luxury. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Lychee, Bergamot & Orange",
+            "heart": "Jasmine, Rose & Peony",
+            "base": "Vanilla, Amber & Musk"
+        },
+        "image": "/images/posters/zaara-lychee.jpg",
+        "link": "/products/poster-14",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
+    },
+    {
+        "id": "poster-15",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "NESTLE",
+        "tagline": "Fruity & Fresh • Sweet Fruity Luxury. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Pineapple, Bergamot & Lemon",
+            "heart": "Jasmine, Coconut & Peach",
+            "base": "Vanilla, Musk & Amber"
+        },
+        "image": "/images/posters/nestle.jpg",
+        "link": "/products/poster-15",
+        "bgGradient": "from-amber-950 via-stone-900 to-neutral-950",
+        "accentColor": "text-orange-300 border-orange-400/40 bg-orange-400/10",
+        "glowColor": "rgba(251, 146, 60, 0.35)"
+    },
+    {
+        "id": "poster-16",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CANDY",
+        "tagline": "Sweet Honey Dreams • Sweet Indulgence in Every Spray. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Honey, Candy & Bergamot",
+            "heart": "Jasmine, Caramel & Peach",
+            "base": "Vanilla, Amber & Musk"
+        },
+        "image": "/images/posters/candy.jpg",
+        "link": "/products/poster-16",
+        "bgGradient": "from-rose-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-rose-300 border-rose-400/40 bg-rose-400/10",
+        "glowColor": "rgba(244, 63, 94, 0.35)"
+    },
+    {
+        "id": "poster-17",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CHOCO MUSK",
+        "tagline": "Rich, Warm, Sensual • A Sweet Blend of Chocolate & Musk. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Rich Chocolate & Cocoa",
+            "heart": "Creamy Vanilla & Tonka",
+            "base": "Velvet Musk & Amber"
+        },
+        "image": "/images/posters/choco-musk.jpg",
+        "link": "/products/poster-17",
+        "bgGradient": "from-slate-950 via-blue-950/90 to-slate-900",
+        "accentColor": "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
+        "glowColor": "rgba(6, 182, 212, 0.35)"
+    },
+    {
+        "id": "poster-18",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "PRADA PARADOX",
+        "tagline": "A New Dimension of Elegance • Luxury in Every Spray. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Pear, Tangerine & Bergamot",
+            "heart": "Orange Blossom, Neroli & Jasmine",
+            "base": "Bourbon Vanilla"
+        },
+        "image": "/images/posters/prada-paradox.jpg",
+        "link": "/products/poster-18",
+        "bgGradient": "from-purple-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-purple-300 border-purple-400/40 bg-purple-400/10",
+        "glowColor": "rgba(168, 85, 247, 0.35)"
+    },
+    {
+        "id": "poster-19",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "SILK MUSK",
+        "tagline": "Legendary Fragrance • Soft, Sensual, Timeless. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Coconut, White Flower & Bergamot",
+            "heart": "Jasmine, Lavender & Heliotrope",
+            "base": "Vanilla, Amber, Musk & Sandalwood"
+        },
+        "image": "/images/posters/silk-musk.jpg",
+        "link": "/products/poster-19",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
+    },
+    {
+        "id": "poster-20",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "COCO VANILLA",
+        "tagline": "Legendary Fragrance • Sweet, Creamy, Addictive. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Coconut, Peach & Bergamot",
+            "heart": "Jasmine, Heliotrope & Tiare Flower",
+            "base": "Vanilla, Amber, Musk & Sandalwood"
+        },
+        "image": "/images/posters/coco-vanilla.jpg",
+        "link": "/products/poster-20",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
+    },
+    {
+        "id": "poster-21",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "IMPERIAL VALLY",
+        "tagline": "Legendary Fragrance • Fresh, Elegant, Timeless. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot, Lemon & Jasmine",
+            "heart": "Jasmine, Lavender & Heliotrope",
+            "base": "Oud, Amber, Musk & Sandalwood"
+        },
+        "image": "/images/posters/imperial-vally.jpg",
+        "link": "/products/poster-21",
+        "bgGradient": "from-amber-950 via-stone-900 to-neutral-950",
+        "accentColor": "text-orange-300 border-orange-400/40 bg-orange-400/10",
+        "glowColor": "rgba(251, 146, 60, 0.35)"
+    },
+    {
+        "id": "poster-22",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CREED AVENTOS",
+        "tagline": "Legendary Fragrance • Bold, Sophisticated, Timeless. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot, Blackcurrant & Apple",
+            "heart": "Jasmine, Lavender & Patchouli",
+            "base": "Amber, Musk & Oakmoss"
+        },
+        "image": "/images/posters/creed-aventos.jpg",
+        "link": "/products/poster-22",
+        "bgGradient": "from-rose-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-rose-300 border-rose-400/40 bg-rose-400/10",
+        "glowColor": "rgba(244, 63, 94, 0.35)"
+    },
+    {
+        "id": "poster-23",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "VANILLA POWDER",
+        "tagline": "Legendary Fragrance • Soft, Elegant, Timeless. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot, Lavender & Mint",
+            "heart": "Jasmine & Spices",
+            "base": "Oud, Amber & Woody Musk"
+        },
+        "image": "/images/posters/vanilla-powder.jpg",
+        "link": "/products/poster-23",
+        "bgGradient": "from-slate-950 via-blue-950/90 to-slate-900",
+        "accentColor": "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
+        "glowColor": "rgba(6, 182, 212, 0.35)"
+    },
+    {
+        "id": "poster-24",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "DODGE",
+        "tagline": "Bold, Confident, Unforgettable • Power, Style, Elegance. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot & Black Pepper",
+            "heart": "Cardamom & Jasmine",
+            "base": "Dark Woods & Amber"
+        },
+        "image": "/images/posters/dodge.jpg",
+        "link": "/products/poster-24",
+        "bgGradient": "from-purple-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-purple-300 border-purple-400/40 bg-purple-400/10",
+        "glowColor": "rgba(168, 85, 247, 0.35)"
+    },
+    {
+        "id": "poster-25",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "TARAF",
+        "tagline": "A Scent Beyond Words • Elegance, Tradition, Allure. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Damask Rose & Spices",
+            "heart": "Saffron & Precious Oud",
+            "base": "Royal Amber & Musk"
+        },
+        "image": "/images/posters/taraf.jpg",
+        "link": "/products/poster-25",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
+    },
+    {
+        "id": "poster-26",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "CR7 CRISTIANO RONALDO",
+        "tagline": "Legendary Fragrance • Athletic Power & Refined Sillage. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot, Lavender & Mint",
+            "heart": "Lavender, Jasmine & Spices",
+            "base": "Oud, Amber & Woody Musk"
+        },
+        "image": "/images/posters/cr7.jpg",
+        "link": "/products/poster-26",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
+    },
+    {
+        "id": "poster-27",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "BIANCO LATTE",
+        "tagline": "Legendary Fragrance • Soft, Creamy, Elegant. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot, Orange Flower & Green Accord",
+            "heart": "Jasmine, Lavender & Heliotrope",
+            "base": "Oud, Amber, Musk & Sandalwood"
+        },
+        "image": "/images/posters/bianco-latte.jpg",
+        "link": "/products/poster-27",
+        "bgGradient": "from-amber-950 via-stone-900 to-neutral-950",
+        "accentColor": "text-orange-300 border-orange-400/40 bg-orange-400/10",
+        "glowColor": "rgba(251, 146, 60, 0.35)"
+    },
+    {
+        "id": "poster-28",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "ROSES VANILLA",
+        "tagline": "Legendary Fragrance • Romantic, Warm, Luxurious. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Rose, Bergamot & Pink Pepper",
+            "heart": "Vanilla, Jasmine & Orange Blossom",
+            "base": "Amber, Musk & Sandalwood"
+        },
+        "image": "/images/posters/roses-vanilla.jpg",
+        "link": "/products/poster-28",
+        "bgGradient": "from-rose-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-rose-300 border-rose-400/40 bg-rose-400/10",
+        "glowColor": "rgba(244, 63, 94, 0.35)"
+    },
+    {
+        "id": "poster-29",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "OUD MARACUJA",
+        "tagline": "A Bold Fusion of Oud & Passion • Exotic Luxury. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Passion Fruit (Maracujá) & Spices",
+            "heart": "Patchouli & Oud",
+            "base": "Dark Amber, Leather & Musk"
+        },
+        "image": "/images/posters/oud-maracuja.jpg",
+        "link": "/products/poster-29",
+        "bgGradient": "from-slate-950 via-blue-950/90 to-slate-900",
+        "accentColor": "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",
+        "glowColor": "rgba(6, 182, 212, 0.35)"
+    },
+    {
+        "id": "poster-30",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "MARJ",
+        "tagline": "A Harmony of Freshness & Elegance • Inspired by Nature. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot & Saffron",
+            "heart": "Jasmine & Raspberry",
+            "base": "Royal Oud & Amber"
+        },
+        "image": "/images/posters/marj.jpg",
+        "link": "/products/poster-30",
+        "bgGradient": "from-purple-950 via-pink-950/70 to-neutral-950",
+        "accentColor": "text-purple-300 border-purple-400/40 bg-purple-400/10",
+        "glowColor": "rgba(168, 85, 247, 0.35)"
+    },
+    {
+        "id": "poster-31",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "OUD MADAWI",
+        "tagline": "A Royal Blend of Tradition & Elegance • Timeless Arabian Luxury. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Bergamot & Saffron",
+            "heart": "Jasmine & Floral Accord",
+            "base": "Deep Oud, Amber & Woody Notes"
+        },
+        "image": "/images/posters/oud-madawi.jpg",
+        "link": "/products/poster-31",
+        "bgGradient": "from-neutral-950 via-amber-950/80 to-stone-950",
+        "accentColor": "text-amber-400 border-amber-400/40 bg-amber-400/10",
+        "glowColor": "rgba(217, 119, 6, 0.35)"
+    },
+    {
+        "id": "poster-32",
+        "badge": "Zaara Eau de Parfum Masterpiece",
+        "title": "OUD KLASSIK",
+        "tagline": "Timeless Elegance in Every Drop • A Blend of Tradition & Luxury. High-concentration Eau de Parfum crafted with fine ingredients.",
+        "notes": {
+            "top": "Aged Arabian Oud & Spices",
+            "heart": "Precious Woods & Incense",
+            "base": "Amber, Musk & Vanilla"
+        },
+        "image": "/images/posters/oud-klassik.jpg",
+        "link": "/products/poster-32",
+        "bgGradient": "from-neutral-950 via-emerald-950/80 to-neutral-950",
+        "accentColor": "text-emerald-400 border-emerald-400/40 bg-emerald-400/10",
+        "glowColor": "rgba(16, 185, 129, 0.35)"
     }
 ];
 
@@ -291,7 +647,7 @@ export function Hero() {
                                 href="#masterpiece-gallery"
                                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/25 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs md:text-sm tracking-widest uppercase transition-all backdrop-blur-md"
                             >
-                                View Poster Gallery
+                                View All 32 Artworks
                             </a>
                         </div>
                     </div>
