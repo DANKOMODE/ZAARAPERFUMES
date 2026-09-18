@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 164 86% 12%;
-    /* #043927 */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
   }
 }
 
 body {
-  @apply bg-brand-light text-brand-primary antialiased;
+  @apply bg-neutral-950 text-white antialiased selection:bg-amber-400 selection:text-neutral-950;
+  background-color: #0A0A0C;
 }
 
 h1,
@@ -29,7 +29,6 @@ h6 {
   }
 
   @keyframes bounce-slow {
-
     0%,
     100% {
       transform: translateY(0);
@@ -38,5 +37,9 @@ h6 {
     50% {
       transform: translateY(-10px);
     }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

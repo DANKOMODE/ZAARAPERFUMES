@@ -10,21 +10,21 @@ import Image from 'next/image';
 export function Navbar() {
     const { openCart, totalItems } = useCart();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const handleInquiry = () => {
         const whatsappNumber = "971588978103";
-        const message = encodeURIComponent("Hello ZAARA! I'm interested in wholesale fragrance oils.");
+        const message = encodeURIComponent("Hello ZAARA PERFUMES! I am interested in ordering your Eau de Parfum collection.");
         window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
     };
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-brand-primary/10 bg-white/80 backdrop-blur-md">
+        <nav className="sticky top-0 z-50 w-full border-b border-amber-400/20 bg-neutral-950/90 backdrop-blur-md text-white shadow-2xl">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex h-20 items-center justify-between">
 
+                    {/* Logo & Brand Name */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-12 h-12 bg-white rounded-xl p-1 shadow-sm border border-brand-primary/5 transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-0.5">
+                        <div className="relative w-11 h-11 bg-neutral-900 rounded-xl p-1 shadow-md border border-amber-400/30 transition-all duration-300 group-hover:border-amber-400 group-hover:-translate-y-0.5">
                             <Image
                                 src="/images/logo.png"
                                 alt="ZAARA PERFUMES Logo"
@@ -33,49 +33,53 @@ export function Navbar() {
                                 priority
                             />
                         </div>
-                        <span className="text-xl font-serif font-bold tracking-widest text-brand-primary hidden sm:block group-hover:text-brand-accent transition-colors">
+                        <span className="text-lg md:text-xl font-serif font-bold tracking-widest text-amber-400 hidden sm:block group-hover:text-amber-300 transition-colors">
                             ZAARA PERFUMES
                         </span>
                     </Link>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex gap-8 items-center text-sm font-medium text-brand-primary/80">
-                        <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                        <Link href="/#collection" className="hover:text-brand-primary transition-colors">Collection</Link>
-                        <Link href="/about" className="hover:text-brand-primary transition-colors">About</Link>
-                        <Link href="/contact" className="hover:text-brand-primary transition-colors">Contact</Link>
+                    <div className="hidden md:flex gap-8 items-center text-xs uppercase tracking-widest font-semibold text-gray-300">
+                        <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
+                        <Link href="/#masterpiece-gallery" className="hover:text-amber-400 transition-colors">Gallery</Link>
+                        <Link href="/#collection" className="hover:text-amber-400 transition-colors">Catalog</Link>
+                        <Link href="/about" className="hover:text-amber-400 transition-colors">About</Link>
+                        <Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link>
                     </div>
 
                     {/* Desktop Search Bar */}
-                    <div className="hidden md:block flex-1 max-w-md mx-8">
+                    <div className="hidden md:block flex-1 max-w-sm mx-6">
                         <SearchBar />
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 md:gap-4">
 
+                        {/* Cart Button */}
                         <button
                             onClick={openCart}
-                            className="relative p-2 text-brand-primary hover:text-brand-accent transition-colors"
+                            className="relative p-2 text-gray-200 hover:text-amber-400 transition-colors rounded-full hover:bg-white/5"
+                            aria-label="Open Shopping Cart"
                         >
                             <ShoppingBag className="w-5 h-5" />
                             {totalItems > 0 && (
-                                <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-brand-accent text-[10px] font-bold text-white">
+                                <span className="absolute top-0 right-0 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-neutral-950 shadow-md animate-pulse">
                                     {totalItems}
                                 </span>
                             )}
                         </button>
 
+                        {/* Order WhatsApp Button */}
                         <button
                             onClick={handleInquiry}
-                            className="hidden md:block bg-brand-primary text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-brand-dark transition-colors duration-300"
+                            className="hidden md:block bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-widest hover:from-amber-300 hover:to-amber-400 transition-all shadow-md shadow-amber-500/20"
                         >
-                            Inquire Now
+                            Order via WhatsApp
                         </button>
 
                         {/* Mobile Menu Toggle */}
                         <button
-                            className="md:hidden p-2 text-brand-primary"
+                            className="md:hidden p-2 text-white hover:text-amber-400"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
                             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -86,45 +90,51 @@ export function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-brand-primary/10 shadow-xl py-4 flex flex-col animate-in slide-in-from-top-2">
-                    {/* Mobile Search */}
-                    <div className="px-6 pb-4 mb-2 border-b border-gray-100">
+                <div className="md:hidden absolute top-20 left-0 w-full bg-neutral-950/98 border-b border-amber-400/20 shadow-2xl py-4 flex flex-col backdrop-blur-xl animate-in slide-in-from-top-2">
+                    <div className="px-5 pb-4 mb-2 border-b border-white/10">
                         <SearchBar />
                     </div>
                     <Link
                         href="/"
-                        className="px-6 py-3 text-brand-primary hover:bg-gray-50 font-medium"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-200 hover:text-amber-400 hover:bg-white/5"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         Home
                     </Link>
                     <Link
-                        href="/#collection"
-                        className="px-6 py-3 text-brand-primary hover:bg-gray-50 font-medium"
+                        href="/#masterpiece-gallery"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-200 hover:text-amber-400 hover:bg-white/5"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        Collection
+                        Masterpiece Gallery
+                    </Link>
+                    <Link
+                        href="/#collection"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-200 hover:text-amber-400 hover:bg-white/5"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        EDP Catalog
                     </Link>
                     <Link
                         href="/about"
-                        className="px-6 py-3 text-brand-primary hover:bg-gray-50 font-medium"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-200 hover:text-amber-400 hover:bg-white/5"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        About
+                        About Us
                     </Link>
                     <Link
                         href="/contact"
-                        className="px-6 py-3 text-brand-primary hover:bg-gray-50 font-medium"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-200 hover:text-amber-400 hover:bg-white/5"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         Contact
                     </Link>
-                    <div className="px-6 pt-4 mt-2 border-t border-gray-100">
+                    <div className="px-6 pt-4 mt-2 border-t border-white/10">
                         <button
                             onClick={handleInquiry}
-                            className="w-full bg-brand-primary text-white py-3 text-center uppercase text-sm tracking-widest"
+                            className="w-full bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 font-bold py-3 text-center uppercase text-xs tracking-widest rounded-xl shadow-lg"
                         >
-                            Inquire Now
+                            Order via WhatsApp
                         </button>
                     </div>
                 </div>

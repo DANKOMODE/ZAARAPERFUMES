@@ -102,12 +102,12 @@ function SearchContent() {
     };
 
     return (
-        <div className="bg-white min-h-screen py-12 md:py-20">
+        <div className="bg-neutral-950 text-white min-h-screen py-12 md:py-20">
             <div className="container mx-auto px-4">
 
                 <div className="text-center mb-12 space-y-6">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary">
-                        Search Results
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-white tracking-wide">
+                        Search Fragrances
                     </h1>
 
                     {/* Dedicated Search Bar for Results Page */}
@@ -116,28 +116,28 @@ function SearchContent() {
                     </div>
 
                     {query && (
-                        <p className="text-brand-primary/60 max-w-2xl mx-auto pt-2">
+                        <p className="text-neutral-400 max-w-2xl mx-auto pt-2">
                             {searchResults.length > 0
-                                ? `Found ${searchResults.length} result${searchResults.length !== 1 ? 's' : ''} for "${query}"`
-                                : `No results found for "${query}"`
+                                ? `Found ${searchResults.length} fragrance${searchResults.length !== 1 ? 's' : ''} for "${query}"`
+                                : `No fragrances found for "${query}"`
                             }
                         </p>
                     )}
-                    <div className="h-1 w-20 bg-brand-accent mx-auto mt-4" />
+                    <div className="h-0.5 w-20 bg-amber-400 mx-auto mt-4 rounded-full" />
                 </div>
 
                 {searchResults.length > 0 && (
                     <>
                         {/* Filters & Sort Bar */}
-                        <div className="flex flex-col md:flex-row gap-4 mb-8 pb-6 border-b border-brand-primary/10">
+                        <div className="flex flex-col md:flex-row gap-4 mb-8 pb-6 border-b border-amber-400/20 bg-neutral-900/40 p-4 rounded-2xl border">
 
                             {/* View Toggle */}
-                            <div className="flex items-center gap-2 md:border-r border-brand-primary/10 md:pr-4">
+                            <div className="flex items-center gap-2 md:border-r border-amber-400/20 md:pr-4">
                                 <button
                                     onClick={() => setViewMode('grid')}
-                                    className={`p-2 rounded transition-colors ${viewMode === 'grid'
-                                        ? 'bg-brand-primary text-white'
-                                        : 'bg-white text-brand-primary/40 hover:text-brand-primary border border-brand-primary/20'
+                                    className={`p-2.5 rounded-lg transition-colors ${viewMode === 'grid'
+                                        ? 'bg-amber-400 text-neutral-950 font-bold shadow-md shadow-amber-400/20'
+                                        : 'bg-neutral-900 text-neutral-400 hover:text-white border border-amber-400/20'
                                         }`}
                                     title="Grid view"
                                 >
@@ -145,9 +145,9 @@ function SearchContent() {
                                 </button>
                                 <button
                                     onClick={() => setViewMode('list')}
-                                    className={`p-2 rounded transition-colors ${viewMode === 'list'
-                                        ? 'bg-brand-primary text-white'
-                                        : 'bg-white text-brand-primary/40 hover:text-brand-primary border border-brand-primary/20'
+                                    className={`p-2.5 rounded-lg transition-colors ${viewMode === 'list'
+                                        ? 'bg-amber-400 text-neutral-950 font-bold shadow-md shadow-amber-400/20'
+                                        : 'bg-neutral-900 text-neutral-400 hover:text-white border border-amber-400/20'
                                         }`}
                                     title="List view"
                                 >
@@ -157,62 +157,35 @@ function SearchContent() {
 
                             {/* Sort Dropdown */}
                             <div className="flex items-center gap-3">
-                                <label className="text-sm font-medium text-brand-primary/60 uppercase tracking-wider">
-                                    Sort by:
+                                <label className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                                    Sort:
                                 </label>
                                 <div className="relative">
                                     <select
                                         value={sortBy}
                                         onChange={(e) => { setSortBy(e.target.value as SortOption); setPage(1); }}
-                                        className="appearance-none bg-white border border-brand-primary/20 rounded-sm px-4 py-2 pr-10 text-sm text-brand-primary focus:outline-none focus:border-brand-primary/50 cursor-pointer"
+                                        className="appearance-none bg-neutral-900 border border-amber-400/30 rounded-xl px-4 py-2 pr-10 text-xs text-white focus:outline-none focus:border-amber-400 cursor-pointer"
                                     >
                                         <option value="name-asc">Name (A-Z)</option>
                                         <option value="price-low">Price: Low to High</option>
                                         <option value="price-high">Price: High to Low</option>
                                     </select>
-                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-primary/40 pointer-events-none" />
+                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-400 pointer-events-none" />
                                 </div>
-                            </div>
-
-                            {/* Collection Filters */}
-                            <div className="flex items-center gap-3 flex-wrap">
-                                <label className="text-sm font-medium text-brand-primary/60 uppercase tracking-wider">
-                                    Collection:
-                                </label>
-                                {['Signature', 'Classic', 'Top Quality'].map(category => (
-                                    <button
-                                        key={category}
-                                        onClick={() => toggleCategory(category)}
-                                        className={`px-3 py-1 text-xs border rounded-full transition-all ${selectedCategories.includes(category)
-                                            ? 'bg-brand-primary text-white border-brand-primary'
-                                            : 'border-brand-primary/20 text-brand-primary/60 hover:border-brand-primary/50'
-                                            }`}
-                                    >
-                                        {category}
-                                    </button>
-                                ))}
-                                {selectedCategories.length > 0 && (
-                                    <button
-                                        onClick={() => { setSelectedCategories([]); setPage(1); }}
-                                        className="text-xs text-brand-accent underline ml-2"
-                                    >
-                                        Clear
-                                    </button>
-                                )}
                             </div>
 
                             {/* Size Filters */}
                             <div className="flex items-center gap-3 flex-wrap">
-                                <label className="text-sm font-medium text-brand-primary/60 uppercase tracking-wider">
-                                    Filter by Size:
+                                <label className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                                    Size:
                                 </label>
-                                {availableSizes.map(size => (
+                                {['50ml', '100ml'].map(size => (
                                     <button
                                         key={size}
                                         onClick={() => toggleSize(size)}
-                                        className={`px-3 py-1 text-xs border rounded-full transition-all ${selectedSizes.includes(size)
-                                            ? 'bg-brand-primary text-white border-brand-primary'
-                                            : 'border-brand-primary/20 text-brand-primary/60 hover:border-brand-primary/50'
+                                        className={`px-3 py-1.5 text-xs border rounded-full transition-all ${selectedSizes.includes(size)
+                                            ? 'bg-amber-400 text-neutral-950 font-bold border-amber-400 shadow-md shadow-amber-400/20'
+                                            : 'bg-neutral-900 border-amber-400/20 text-neutral-400 hover:border-amber-400/60 hover:text-white'
                                             }`}
                                     >
                                         {size}
@@ -221,7 +194,7 @@ function SearchContent() {
                                 {selectedSizes.length > 0 && (
                                     <button
                                         onClick={() => { setSelectedSizes([]); setPage(1); }}
-                                        className="text-xs text-brand-accent underline ml-2"
+                                        className="text-xs text-amber-400 underline ml-2"
                                     >
                                         Clear
                                     </button>
@@ -230,9 +203,9 @@ function SearchContent() {
                         </div>
 
                         {/* Results Count */}
-                        <div className="flex justify-between items-center mb-8 text-sm text-brand-primary/50">
-                            <span>Showing {processedProducts.length} results</span>
-                            <span className="text-xs">
+                        <div className="flex justify-between items-center mb-8 text-xs text-neutral-400">
+                            <span>Showing {processedProducts.length} fragrances</span>
+                            <span className="uppercase tracking-widest text-[10px] text-amber-400/80">
                                 {viewMode === 'grid' ? 'Grid View' : 'List View'}
                             </span>
                         </div>
@@ -253,21 +226,21 @@ function SearchContent() {
 
                         {/* Pagination */}
                         {totalPages > 1 && (
-                            <div className="flex justify-center gap-2 mt-16">
+                            <div className="flex justify-center items-center gap-3 mt-16">
                                 <button
                                     onClick={() => setPage(p => Math.max(1, p - 1))}
                                     disabled={page === 1}
-                                    className="px-4 py-2 border border-brand-primary/20 disabled:opacity-30 hover:bg-brand-primary hover:text-white transition-colors"
+                                    className="px-4 py-2 bg-neutral-900 border border-amber-400/30 rounded-xl text-xs font-semibold text-white disabled:opacity-30 hover:bg-amber-400 hover:text-neutral-950 transition-colors"
                                 >
                                     Previous
                                 </button>
-                                <span className="px-4 py-2 text-brand-primary/60">
+                                <span className="px-4 py-2 text-xs text-neutral-400">
                                     Page {page} of {totalPages}
                                 </span>
                                 <button
                                     onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                                     disabled={page === totalPages}
-                                    className="px-4 py-2 border border-brand-primary/20 disabled:opacity-30 hover:bg-brand-primary hover:text-white transition-colors"
+                                    className="px-4 py-2 bg-neutral-900 border border-amber-400/30 rounded-xl text-xs font-semibold text-white disabled:opacity-30 hover:bg-amber-400 hover:text-neutral-950 transition-colors"
                                 >
                                     Next
                                 </button>
