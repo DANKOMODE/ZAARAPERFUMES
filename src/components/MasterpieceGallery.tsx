@@ -68,7 +68,7 @@ export function MasterpieceGallery() {
                     </h2>
 
                     <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed">
-                        Explore our 32 luxury Eau de Parfum poster artworks, showcasing the exquisite notes, elegance, and storytelling behind each signature blend.
+                        Explore our luxury perfume poster artworks, showcasing the exquisite notes, elegance, and storytelling behind each signature blend.
                     </p>
 
                     {/* Category Filter Tabs */}

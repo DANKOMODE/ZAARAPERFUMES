@@ -56,7 +56,7 @@ export function FeaturedCarousel() {
                         Zaara Eau de Parfum Masterpiece Collection
                     </h2>
                     <p className="text-brand-primary/70 max-w-2xl mx-auto text-sm md:text-base">
-                        Explore our 13 luxury retail fragrances available in 50ml (75 AED) & 100ml (150 AED)
+                        Explore our luxury retail fragrances available in 50ml (75 AED) & 100ml (150 AED)
                     </p>
                     <div className="h-1 w-20 bg-brand-accent mx-auto mt-5 rounded-full" />
                 </div>

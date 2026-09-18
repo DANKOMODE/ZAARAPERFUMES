@@ -647,7 +647,7 @@ export function Hero() {
                                 href="#masterpiece-gallery"
                                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/25 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs md:text-sm tracking-widest uppercase transition-all backdrop-blur-md"
                             >
-                                View All 32 Artworks
+                                View Poster Gallery
                             </a>
                         </div>
                     </div>

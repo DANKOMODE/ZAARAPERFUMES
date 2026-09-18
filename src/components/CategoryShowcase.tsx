@@ -21,7 +21,7 @@ export function CategoryShowcase() {
                     </h2>
 
                     <p className="text-brand-primary/70 text-sm md:text-base leading-relaxed">
-                        Discover our 13 signature retail fragrances, handcrafted with luxury ingredients and available in 50ml (75 AED) & 100ml (150 AED) bottles.
+                        Discover our signature retail fragrances, handcrafted with luxury ingredients and available in 50ml (75 AED) & 100ml (150 AED) bottles.
                     </p>
 
                     <div className="h-1 w-20 bg-brand-accent mx-auto mt-6 rounded-full" />
