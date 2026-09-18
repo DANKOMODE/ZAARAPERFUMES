@@ -1,59 +1,68 @@
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Home, Grid3x3, Search, ShoppingBag } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Home, Compass, Search, ShoppingBag } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import { useEffect, useState } from "react";
 
 export function MobileNav() {
     const pathname = usePathname();
-    const { openCart, totalItems } = useCart();
+    const { totalItems, openCart } = useCart();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
 
     const navItems = [
-        { label: 'Home', href: '/', icon: Home },
-        { label: 'Catalog', href: '/#collection', icon: Grid3x3 },
-        { label: 'Search', href: '/search', icon: Search },
+        { label: "Home", href: "/", icon: Home },
+        { label: "Catalog", href: "/#collection", icon: Compass },
+        { label: "Search", href: "/search", icon: Search },
     ];
 
     return (
-        <div className="md:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white/95 backdrop-blur-lg border-t border-brand-primary/10 px-6 sm:px-12 flex items-center justify-between shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-            {navItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = pathname === item.href;
+        <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-brand-primary/10 py-2 px-3 md:hidden shadow-lg">
+            <div className="flex items-center justify-around">
+                {navItems.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
 
-                return (
-                    <Link
-                        key={item.label}
-                        href={item.href}
-                        className={cn(
-                            "flex flex-col items-center justify-center gap-1 transition-all duration-300 transform",
-                            isActive ? "text-brand-accent scale-110" : "text-brand-primary/40 hover:text-brand-primary"
+                    return (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className={`flex flex-col items-center gap-1 py-1 px-3 rounded-lg text-xs font-medium transition-colors ${
+                                isActive
+                                    ? "text-brand-accent font-semibold"
+                                    : "text-brand-primary/60 hover:text-brand-primary"
+                            }`}
+                        >
+                            <Icon className="w-5 h-5" />
+                            <span>{item.label}</span>
+                        </Link>
+                    );
+                })}
+
+                {/* Cart Action Button */}
+                <button
+                    onClick={openCart}
+                    className="relative flex flex-col items-center gap-1 py-1 px-3 rounded-lg text-xs font-medium text-brand-primary/60 hover:text-brand-primary transition-colors"
+                    aria-label="Open Cart Drawer"
+                >
+                    <div className="relative">
+                        <ShoppingBag className="w-5 h-5" />
+                        {totalItems > 0 && (
+                            <span className="absolute -top-1.5 -right-2 bg-brand-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+                                {totalItems}
+                            </span>
                         )}
-                    >
-                        <Icon className={cn("w-5 h-5", isActive && "stroke-[2.5px]")} />
-                        <span className="text-[10px] font-bold uppercase tracking-tighter">
-                            {item.label}
-                        </span>
-                    </Link>
-                );
-            })}
-
-            {/* Cart Button */}
-            <button
-                onClick={openCart}
-                className="flex flex-col items-center justify-center gap-1 text-brand-primary/40 hover:text-brand-primary relative transition-transform active:scale-90"
-            >
-                <div className="relative">
-                    <ShoppingBag className="w-5 h-5" />
-                    {totalItems > 0 && (
-                        <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand-accent text-[8px] font-bold text-white ring-2 ring-white">
-                            {totalItems}
-                        </span>
-                    )}
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-tighter">Cart</span>
-            </button>
-        </div>
+                    </div>
+                    <span>Cart</span>
+                </button>
+            </div>
+        </nav>
     );
 }
